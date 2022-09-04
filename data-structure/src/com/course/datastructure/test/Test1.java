@@ -9,6 +9,7 @@ public class Test1 {
         vector1.add("Element 1");
         vector1.add("Element 2");
         vector1.add("Element 3");
+        System.out.println(vector1.getSize());
         System.out.println(vector1);
     }
 }
