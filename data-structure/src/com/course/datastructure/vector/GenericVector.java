@@ -1,12 +1,11 @@
 package com.course.datastructure.vector;
 
-public class Vector {
-
-    private String [] element;
+public class GenericVector {
+    private Object [] element;
     private int size;
 
-    public Vector(int capacity){
-        this.element = new String[capacity];
+    public GenericVector(int capacity){
+        this.element = new Object[capacity];
         this.size = 0;
     }
 
@@ -16,7 +15,7 @@ public class Vector {
 
     private void changeCapacityVector(){
         if(this.size == this.element.length){
-            String[] newVectorElement = new String[this.element.length * 2];
+            Object[] newVectorElement = new Object[this.element.length * 2];
             for(int i=0; i<element.length; i++){
                 newVectorElement[i] = this.element[i];
             }
@@ -25,27 +24,7 @@ public class Vector {
 
     }
 
-    // wrong way to implement this code... because it´s expend a lot off memory for add
-    /*public void add(String element){
-        for(int i=0; i<this.element.length; i++){
-            if(this.element[i] == null){
-                this.element[i] = element;
-                break;
-            }
-        }
-    }*/
-
-    // possible way to implement... with throws exception.
-    /*  public void add(String element) throws Exception {
-        if(this.size < this.element.length){
-            this.element[this.size] = element;
-            this.size++;
-        }else {
-            throw new Exception("This Vector is full, is not possible to add more element!");
-        }
-     }*/
-
-    public boolean add(String element){
+    public boolean add(Object element){
         this.changeCapacityVector();
         if(this.size < this.element.length){
             this.element[this.size] = element;
@@ -56,7 +35,7 @@ public class Vector {
     }
 
     //add element in any position... for this happen, it's necessary to move elements
-    public boolean add(String element, int position) throws Exception {
+    public boolean add(Object element, int position) throws Exception {
         this.changeCapacityVector();
         if(position >=0 && position<=this.element.length){
             //moving element
@@ -69,24 +48,16 @@ public class Vector {
         }
         this.changeCapacityVector();
         throw new Exception("This position does not exist");
-
     }
 
-    public String searchBy(int position) throws Exception {
+    public Object searchBy(int position) throws Exception {
         if( position > 0 && position <= this.size){
             return this.element[position];
         }
         throw new Exception("This position does not exist");
     }
 
-    //possible way...
-   /* public boolean searchBy(String element) {
-        for(int i=0; i<this.size; i++){
-            if(this.element[i].equals(element)) return true;
-        }
-        return false;
-    }*/
-    public int searchBy(String element){
+    public int searchBy(Object element){
         for(int i=0; i<this.size; i++){
             if(this.element[i].equals(element)) return i;
         }
