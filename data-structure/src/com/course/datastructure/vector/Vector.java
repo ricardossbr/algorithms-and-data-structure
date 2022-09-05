@@ -14,6 +14,17 @@ public class Vector {
         return this.size;
     }
 
+    private void changeCapacityVector(){
+        if(this.size == this.element.length){
+            String[] newVectorElement = new String[this.element.length * 2];
+            for(int i=0; i<element.length; i++){
+                newVectorElement[i] = this.element[i];
+            }
+            this.element = newVectorElement;
+        }
+
+    }
+
     // wrong way to implement this code... because it´s expend a lot off memory for add
     /*public void add(String element){
         for(int i=0; i<this.element.length; i++){
@@ -35,6 +46,7 @@ public class Vector {
      }*/
 
     public boolean add(String element){
+        this.changeCapacityVector();
         if(this.size < this.element.length){
             this.element[this.size] = element;
             this.size++;
@@ -45,6 +57,7 @@ public class Vector {
 
     //add element in any position... for this happen, it's necessary to move elements
     public boolean add(String element, int position) throws Exception {
+        this.changeCapacityVector();
         if(position >=0 && position<=this.element.length){
             //moving element
             for(int i = this.size -1; i >= position; i--){
@@ -54,6 +67,7 @@ public class Vector {
             this.size++;
             return true;
         }
+        this.changeCapacityVector();
         throw new Exception("This position does not exist");
 
     }
