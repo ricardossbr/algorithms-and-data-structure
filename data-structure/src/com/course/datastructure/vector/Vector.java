@@ -43,6 +43,26 @@ public class Vector {
         return false;
     }
 
+    public String searchBy(int position) throws Exception {
+        if( position > 0 && position <= size){
+            return this.element[position];
+        }
+        throw new Exception("This position does not exist");
+    }
+
+    //possible way...
+   /* public boolean searchBy(String element) {
+        for(int i=0; i<this.size; i++){
+            if(this.element[i].equals(element)) return true;
+        }
+        return false;
+    }*/
+    public int searchBy(String element){
+        for(int i=0; i<this.size; i++){
+            if(this.element[i].equals(element)) return i;
+        }
+        return -1;
+    }
     @Override
     public String toString() {
         final StringBuilder print = new StringBuilder();
