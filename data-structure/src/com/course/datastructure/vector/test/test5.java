@@ -1,4 +1,4 @@
-package com.course.datastructure.test;
+package com.course.datastructure.vector.test;
 
 import com.course.datastructure.vector.Vector;
 

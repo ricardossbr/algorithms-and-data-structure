@@ -1,10 +1,10 @@
 package com.course.datastructure.vector;
 
-public class GenericVector {
+public class ObjectVector {
     private Object [] element;
     private int size;
 
-    public GenericVector(int capacity){
+    public ObjectVector(int capacity){
         this.element = new Object[capacity];
         this.size = 0;
     }

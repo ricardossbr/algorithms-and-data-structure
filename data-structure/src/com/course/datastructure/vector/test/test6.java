@@ -1,6 +1,6 @@
-package com.course.datastructure.test;
+package com.course.datastructure.vector.test;
 
-import com.course.datastructure.vector.GenericVector;
+import com.course.datastructure.vector.ObjectVector;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
 public class test6 {
 
     public static void main(String args[]) throws Exception {
-        GenericVector vector = new GenericVector(10);
+        ObjectVector vector = new ObjectVector(10);
         vector.add(10);
         vector.add(11);
         vector.add(101);
@@ -18,7 +18,7 @@ public class test6 {
         System.out.println(vector);
 
 
-        GenericVector vector2 = new GenericVector(10);
+        ObjectVector vector2 = new ObjectVector(10);
         final List<Integer> numberList = Arrays.asList(10, 11, 12, 13, 14);
         final Set<String> stringSet = Set.of("A", "B", "C", "D", "E");
         final Map<String, String> elementMapper = Map.of("Element1", "Element", "Element2", "Element2");
