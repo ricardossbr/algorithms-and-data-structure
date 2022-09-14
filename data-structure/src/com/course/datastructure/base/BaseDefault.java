@@ -53,7 +53,7 @@ public abstract class BaseDefault<T> {
         return false;
     }
 
-    public void remove(int position) throws Exception {
+    protected void remove(int position) throws Exception {
         if(position>=0 && position <= this.element.length){
             for(int i = position; i<this.size-1; i++){
                 this.element[i] = this.element[i+1];

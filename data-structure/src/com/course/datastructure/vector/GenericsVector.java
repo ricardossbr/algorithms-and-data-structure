@@ -24,6 +24,11 @@ public class GenericsVector<T> extends BaseDefault {
     }
 
     @Override
+    public void remove(int position) throws Exception {
+        super.remove(position);
+    }
+
+    @Override
     public boolean add(Object element){
         return super.add(element);
     }
