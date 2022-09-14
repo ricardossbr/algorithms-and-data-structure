@@ -19,7 +19,7 @@ public abstract class BaseDefault<T> {
     public boolean isEmpty(){
         return this.size == 0;
     }
-    private void changeCapacityVector(){
+    private void changeElementCapacity(){
         if(this.size == this.element.length){
             T[] newVectorElement = (T[]) new Object[this.element.length * 2];
             for(int i=0; i<element.length; i++){
@@ -30,7 +30,7 @@ public abstract class BaseDefault<T> {
     }
 
     protected boolean add(T element, int position) throws Exception {
-        this.changeCapacityVector();
+        this.changeElementCapacity();
         if(position >=0 && position<=this.element.length){
             for(int i = this.size -1; i >= position; i--){
                 this.element[i+1] = this.element[i];
@@ -39,12 +39,12 @@ public abstract class BaseDefault<T> {
             this.size++;
             return true;
         }
-        this.changeCapacityVector();
+        this.changeElementCapacity();
         throw new Exception("This position does not exist");
     }
 
     protected boolean add(T element){
-        this.changeCapacityVector();
+        this.changeElementCapacity();
         if(this.size < this.element.length){
             this.element[this.size] = element;
             this.size++;

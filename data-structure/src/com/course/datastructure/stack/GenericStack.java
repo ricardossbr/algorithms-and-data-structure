@@ -23,7 +23,7 @@ public class GenericStack<T> extends BaseDefault {
         return  (T) this.element[--this.size];
     }
 
-    public T top() throws Exception {
+    public T peek() {
         if(this.isEmpty()){
             return null;
         }

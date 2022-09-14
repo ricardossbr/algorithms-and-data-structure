@@ -20,7 +20,7 @@ public class test1 {
         System.out.println(stack);
         System.out.println(stack.size());
         System.out.println(stack.isEmpty());
-        System.out.println(stack.top());
+        System.out.println(stack.peek());
         System.out.println(stack);
         System.out.println(stack.pop());
         System.out.println(stack);
