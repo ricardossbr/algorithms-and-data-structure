@@ -2,10 +2,10 @@ package com.course.datastructure.queue;
 
 import com.course.datastructure.base.BaseDefault;
 
-public class Queue<T> extends BaseDefault {
+public class Queue<T> extends BaseDefault<T> {
 
-    public boolean add(Object element){
-        return super.add(element);
+    public void enqueue(T element) throws Exception {
+        super.add(element);
     }
 
     public T remove() throws Exception {
