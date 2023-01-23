@@ -32,8 +32,6 @@ public class  BinarySearch {
             System.out.println("The number: "+ fetched + " to search is not fetched!"  );
         }
 
-
-
     }
     private static void getPopulatedVector(int[] vector) {
         for(int i = 0; i < vector.length; i++){
